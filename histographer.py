@@ -4,6 +4,7 @@ import numpy as np
 from scipy.interpolate import UnivariateSpline
 import operator
 
+random.seed(1)
 def drange(start, stop, step):
     r = start
     while r < stop:
@@ -12,7 +13,7 @@ def drange(start, stop, step):
 
 k = 2427754752 + 1
 flatColorDBlue = '#34495e'
-flatColorMatrix = ['#2980b9','#c0392b','#9b59b6']
+flatColorMatrix = ['#e74c3c','#3498db','#f1c40f']
 
 dist = []
 peaks = []
@@ -60,7 +61,7 @@ for i in vals:
     f2.set_smoothing_factor(scalingFactor)
     pltHandle = plt.plot(xsto,f2(xsto),lw=2,label=('S = ' + str(scalingFactor)),color=flatColorMatrix[n])
     n += 1
-plt.legend(loc='best',fancybox=True, framealpha=0.5,frameon=False)
+plt.legend(loc='best',fancybox=True, framealpha=0.8)
 plt.savefig('histogram.pdf',format='pdf')
 plt.show()
 
